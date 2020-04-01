@@ -1,5 +1,13 @@
 
-//node {
+node{
+         Stage('SCM checkout'){
+                  git 'https://github.com/Raouagarati101/java'
+         }
+         Stage('compile stage'){    
+         def mvnHome = tool name: 'apache-maven-3.6.3', type: 'maven'
+                  sh "${mvnHome}/bin/mvn package"
+         }
+}//node {
    // This is to demo github action	
    //def sonarUrl = 'sonar.host.url=http://172.31.30.136:9000'
   // def mvn = tool (name: 'apache-maven-3.6.3', type: 'maven') + '/bin/mvn'
