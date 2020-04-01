@@ -19,7 +19,7 @@ node {
    //}
    
    stage('Mvn Package'){
-	   def mvn = tool (name: 'apache-maven-3.6.3', type: 'maven') + '/bin/mvn'
+	            def mvnHome = tool name: 'apache-maven-3.6.3', type: 'maven'
 	   Build using maven
 	   
 	  sh "${mvn} clean package deploy"
