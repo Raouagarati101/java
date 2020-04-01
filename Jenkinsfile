@@ -1,23 +1,15 @@
 
-node{
-         Stage('SCM checkout'){
-                  git 'https://github.com/Raouagarati101/java'
-         }
-         Stage('compile stage'){    
-         def mvnHome = tool name: 'apache-maven-3.6.3', type: 'maven'
-                  sh "${mvnHome}/bin/mvn package"
-         }
-}//node {
+node {
    // This is to demo github action	
    //def sonarUrl = 'sonar.host.url=http://172.31.30.136:9000'
-  // def mvn = tool (name: 'apache-maven-3.6.3', type: 'maven') + '/bin/mvn'
-   //stage('SCM Checkout'){
-    // Clone repo
-	//git branch: 'master', 
-	//credentialsId: 'github', 
-	//url: 'https://github.com/Raouagarati101/java'
+  def mvn = tool (name: 'apache-maven-3.6.3', type: 'maven') + '/bin/mvn'
+  stage('SCM Checkout'){
+    Clone repo
+	git branch: 'master', 
+	credentialsId: 'github', 
+	url: 'https://github.com/Raouagarati101/java'
    
-  // }
+   }
    
    //stage('Sonar Publish'){
 	//   withCredentials([string(credentialsId: 'sonarqube', variable: 'sonarToken')]) {
@@ -28,11 +20,11 @@ node{
    //}
    
 	
-   //stage('Mvn Package'){
-	   // Build using maven
+   stage('Mvn Package'){
+	   Build using maven
 	   
-	//   sh "${mvn} clean package deploy"
-  // }
+	  sh "${mvn} clean package deploy"
+   }
    
    //stage('deploy-dev'){
      //  def tomcatDevIp = '172.31.28.172'
