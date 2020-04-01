@@ -6,7 +6,7 @@ node {
   stage('SCM Checkout'){
    // Clone repo
 	git branch: 'master', 
-	credentials Id: 'github', 
+	//credentialeId: 'github', 
 	url: 'https://github.com/Raouagarati101/java'
    
    }
