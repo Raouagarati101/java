@@ -17,7 +17,7 @@ node {
         //sh "${mvn} sonar:sonar -D${sonarUrl}  -D${sonarToken}"
 	 }
       
-   }
+   //}
    
 	
    stage('Mvn Package'){
