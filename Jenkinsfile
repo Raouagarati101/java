@@ -38,7 +38,7 @@ node {
           //sh "ssh ec2-user@${tomcatDevIp} ${tomcatStop}"
 		  //sh "ssh ec2-user@${tomcatDevIp} ${tomcatStart}"
        //}
-   }
+   //}
  //  stage('Email Notfication'){
 //		mail bcc: '', body: """Hi Team, You build successfully deployed
 //		                       Job URL : ${env.JOB_URL}
